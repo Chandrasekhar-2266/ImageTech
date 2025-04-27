@@ -1,0 +1,41 @@
+Project Name      :Stegnography(Image LSB)
+NAME              : U CHANDRA SEKHAR
+DATE              :30/1/2025
+DESCRIPTION       : This project demonstrates Image LSB(Least Significan Bit)
+                  Stegnography implemented inc.The goal is to embed a secret 
+				  text message into an image(usally in format like BM P,PNG or 
+				  JPEG)by modifying the least significant bits of its pixel values.
+				  The resut is an image that look the same as the originial but conatins
+				  hidden message within its pixel data.
+
+
+
+ Heare im using BMP file
+ BMP stands for Bitmap Image File.
+
+ why BMP is choose for Stegnography?
+
+ When implementijng stegnography,especially using lsb techiniques,the chopice of imgage formate is important.
+
+ 1.Uncompressed format:
+                       BMP image are typically uncompressed,meaning the pixel data is stored exactly as it is,without any loss of information.this is crucial for stegnography.as modifying the pixel values(even slightly)can effect compressed formats and might result in visible artifacts or data loss
+
+2.NO data loss:
+               No information is lost when you manipulate the pixel values.in formates like JPEG,even minor adjustments to the image can lead to noticeble distortion due to compression.
+we are taking the one source file and passing the bmp file informatiuon to the source file i named it as defaultly output.bmp
+
+
+
+files containging this project
+
+  1beautiful.bmp file(beutiful.bmp)
+  2.secret file(contains the secret message)
+  3.source file (output.bmp,conatins the beautiful.bmp file information up to 54 bits are for header file and next 2 byttes for magic string heare magic string is "#*",why beacuse identifing the secret messeage using this magic string,and next 4 bytes conatins secret file extetion size,and 4 byrtes for secret file extention,and next 4 bytes for secret file data sixe the secret file data (for encoding lsb method is using so 1 byte is equal to 8 bytes) after that remainging image data(RGB data) and last EOF)
+4.output file(it contains secret file data)
+  
+
+FOR ENCODING GIVE THE COMMANDLINE ARGUMENTS ARE ./a.out -e imagename.bmp yourseret.txt optional
+FOR DECODING GIVE THE COMMANDLINE ARGUMENTS ARE ./a.out -d your sourcfilename.bmp optional;
+
+
+
